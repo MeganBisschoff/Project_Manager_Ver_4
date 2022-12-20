@@ -1,0 +1,113 @@
+// --- Connect to sql server --- //
+
+C:\Users\Megan Bisschoff> cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+
+// --- Log in as other user --- //
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u otheruser -p
+Enter password: swordfish
+
+
+// --- Create database and tables --- //
+
+mysql> create database if not exists PoisePMS_db;
+
+mysql> use PoisePMS_db;
+Database changed
+
+mysql> create table projects (
+	projNumber varchar(10) NOT NULL, 
+	projName varchar(50), 
+	projType varchar(20), 
+	projAddress varchar(50), 
+	projErf int, 
+	feeTotal double,
+	feePaid double, 
+	projDeadline varchar(10), 
+	projFinalised BOOL,
+	projCompletionDate varchar(10),
+	primary key (projNumber));
+
+mysql> create table manager (
+	projNumber varchar(10) NOT NULL, 
+	fullName varchar(50),
+	contactNumber varchar(10),
+	email varchar(50),
+	address varchar(50),
+	primary key (projNumber));
+	
+mysql> create table engineer (
+	projNumber varchar(10) NOT NULL, 
+	fullName varchar(50),
+	contactNumber varchar(10),
+	email varchar(50),
+	address varchar(50),
+	primary key (projNumber));
+	
+mysql> create table architect (
+	projNumber varchar(10) NOT NULL, 
+	fullName varchar(50),
+	contactNumber varchar(10),
+	email varchar(50),
+	address varchar(50),
+	primary key (projNumber));
+	
+mysql> create table customer (
+	projNumber varchar(10) NOT NULL, 
+	fullName varchar(50),
+	contactNumber varchar(10),
+	email varchar(50),
+	address varchar(50),
+	primary key (projNumber));
+
+mysql> show tables;
+
+
+// --- Insert values into each table --- //
+
+mysql> insert into projects values (
+	'111', 'Ocean View', 'House', '11 Ocean drive, Cape Town', 10111, 2000000.0, 20000.0, '2022-01-01', TRUE, '2022-06-01');
+	
+mysql> insert into manager values (	
+	'111', 'Mary Mang', '0123456789', 'mary@mail.com', '11 Main street, Cape Town');
+	
+mysql> insert into engineer values (	
+	'111', 'Esme Engine', '0123456789', 'esme@mail.com', '11 Industrial drive, Cape Town');
+	
+mysql> insert into architect values (
+	'111', 'Alistair Archi', '0123456789', 'alistair@mail.com', '11 Office road, Cape Town');
+	
+mysql> insert into customer values (
+	'111', 'Catherine Cust', '0123456789', 'catherine@mail.com', '11 Beach avenue, Cape Town');
+	
+mysql> insert into projects values (
+	'222', 'Mountain View', 'Appartment', '22 Mountain drive, Durban', 20222, 2000000.0, 20000.0, '2022-01-01', FALSE, Null);
+	
+mysql> insert into manager values (	
+	'222', 'Malcolm Mang', '0123456789', 'malcolm@mail.com', '22 Main street, Durban');
+	
+mysql> insert into engineer values (	
+	'222', 'Edward Engine', '0123456789', 'edward@mail.com', '22 Industrial drive, Durban');
+	
+mysql> insert into architect values (
+	'222', 'Andy Archi', '0123456789', 'andy@mail.com', '22 Office road, Durban');
+	
+mysql> insert into customer values (
+	'222', 'Colby Cust', '0123456789', 'colby@mail.com', '22 Cliff avenue, Durban');
+
+
+// --- Display all values in each table --- //
+
+mysql> select * from projects;	
+mysql> select * from manager;	
+mysql> select * from engineer;	
+mysql> select * from architect;	
+mysql> select * from customer;	
+
+// --- Alter tables contactNumber data type --- //
+
+mysql> alter table manager modify contactNumber varchar(20);
+mysql> alter table engineer modify contactNumber varchar(20);
+mysql> alter table architect modify contactNumber varchar(20);
+mysql> alter table customer modify contactNumber varchar(20);
