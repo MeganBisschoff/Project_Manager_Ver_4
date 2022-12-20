@@ -4,8 +4,6 @@ A Java program that tracks various projects and project members.
 
 ## Description
 
-***
-
 This program is for a fictitious structural engineering firm, called Poised, that allows them to capture project information, search for and edit project information, as well as update the personal details of the persons involved in the project.
 
 This is the forth version of the Project Manager program ([Ver 1](https://github.com/MeganBisschoff/Project_Manager), [Ver 2](https://github.com/MeganBisschoff/Project_Manager_Ver_2), [Ver 3](https://github.com/MeganBisschoff/Project_Manager_Ver_3)) which now connects, reads from and executes queries to a database through a Java API, instead of a local file.
@@ -18,7 +16,6 @@ This is the forth version of the Project Manager program ([Ver 1](https://github
 
 ## Program Overview
 
-***
 The three primary functions of the program are to:
 
 1. Create ``Project`` objects which contains all the project infomration.
@@ -95,7 +92,6 @@ The ``Package()`` class contains a brief overveiw of the program.
 
 ## The Project Manager Program
 
-***
 At startup, a list of Project attribute information is read from the ``PoisePMS_db`` database and populated into new Project objects. The project objects are added to a global ``projectList`` for further operation as selected by the user from the Poised program menu.
 
 Once the program is running, the main ``programMenu`` is presented to the user:
@@ -176,7 +172,6 @@ The menu operations are carried out in the ``EditAndFinaliseProject()`` class wh
 
 **_If user selects ``4``:_**
 
-
 The ``editPersonData()`` method in the ``Person()`` class is called to ``get()`` and ``set()`` the attributes of the Architect, Contractor or Customer, which is then updated in the list.
 
 **_If user selects ``5``:_**
@@ -193,8 +188,6 @@ The ``ReadAndWriteToFile()`` class also includes functions to:
 
 ## Functionality summary
 
-***
-
 * Capture information about new projects.
 * Edit the projects deadline, fee total and fee paid.
 * Finalise a project and add a completion date.
@@ -205,13 +198,9 @@ The ``ReadAndWriteToFile()`` class also includes functions to:
 
 ## Programming principles
 
-***
-
 This program employs the programming concepts of JDBC database programming and Java OOP including classes, get and set methods, dot notation, functions and establishing SQL connections to execute queries. Furthermore it employs fundamental programming techniques that include switch block handling, lists, comparison operators, conditional logic, loops, indexing, date formatting and string handling.
 
 ## Dependencies
-
-***
 
 * Java Database Connectivity MySQL API is used to communicate with the DB server.
 * import java.sql.*;
@@ -223,25 +212,17 @@ This program employs the programming concepts of JDBC database programming and J
 
 ## Running the program
 
-***
-
 Open all the files in the poised package in any Java IDE and run the Main.java file.
 
 ## Java class diagram
-
-***
 
 ![PoiseClassDiagram](PoiseClassDiagram.png)
 
 ## SQL dependency diagram
 
-***
-
 ![PoiseDependencyDiagrams](PoiseDependencyDiagrams.png)
 
 ## Code preview
-
-***
 
 ```java
 /* Method gets Project and Person values of the given project object and inserts the data into 
@@ -369,8 +350,6 @@ public static void writeProjectToDatabase (Project poiseProject) throws SQLExcep
 
 ## Program output preview
 
-***
-
 ```
 --- Project Information ---
 
@@ -418,10 +397,8 @@ _A project is complete when it starts working for you, rather than you working f
 
 ## Author
 
-***
-
-Megan Bisschoff, 2022
+**Megan Bisschoff** 2022
 
 *Project submitted for Software Engineering learnership Level 3 Task 08 at [HyperionDev](https://www.hyperiondev.com/)*
 
-*[View](https://www.hyperiondev.com/portfolio/86596/) submission results and code review.*
+*[View](https://www.hyperiondev.com/portfolio/86596/) submission results.*
